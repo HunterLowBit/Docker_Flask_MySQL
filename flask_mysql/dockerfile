@@ -1,0 +1,12 @@
+FROM python3.9
+
+WORKDIR /flask_mysql
+
+COPY app.py  .
+
+COPY ./ ./
+
+EXPOSE 3000
+
+CMD [app.py]
+
