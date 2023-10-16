@@ -4,7 +4,7 @@ Objetivo: Criar uma aplicação flask(Python) para gerenciar banco de dados MySQ
 
 ## Checklist de Progresso
 
-1. [ ] Clonar o projeto "Docker_Instancia" para molde rapido
+1. [X] Clonar o projeto "Docker_Instancia" para molde rapido
 2. [ ] Instalar e utilizar o Python 3.9 para a padronização entre maquinas
 3. [ ] Criar a querry do banco de dados com MySQL-Workbench e testar modelagem
 4. [ ] Instalar o Flask e congelar versão (PIP FREEZE)

@@ -9,6 +9,5 @@ services:
     container_name: flask_mysql
     volumes:
       - ./flask_mysql:/flask_mysql
-      - node_modules:/flask_mysql/node_modules
 volumes:
-  node_modules:
+  
