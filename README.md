@@ -16,3 +16,55 @@ Objetivo: Criar uma aplicação flask(Python) para gerenciar banco de dados MySQ
 1. [ ] Finalizar a documentação [MANDATÓRIO]
 
 ---
+
+## 1 O que está sendo feito
+
+### 1.1 Template do projeto Docker Instância foi baixado e agora segue a seguinte extrutura de pastas:
+
+```
+|- bin
+|  |- deploy.bat
+|  |- deploy.sh
+|  |- deployCD.bat
+|
+|- flask_mysql
+|  |- staticFiles
+|  |    |- css
+|  |        |- style.css
+|  |
+|  |- templateFiles
+|  |    |- index.html
+|  |
+|  |- app.py
+|  |- dockerfile
+|
+|- docker-compose.yaml
+|- README.md
+|- requirements.txt
+```
+
+### 1.2 O codigo está sendo adaptado para receber as rotas basicas, em breve deve receber as querrys 
+
+#### app.py
+
+```
+from flask import Flask, render_template
+
+
+app = Flask(__name__, template_folder="templateFiles", static_folder="staticFiles")
+
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+
+if __name__ == "__main__":
+    app.run(host="localhost", port="3000", debug=True)
+```
+
+#### requirements.txt
+
+```
+
+```
