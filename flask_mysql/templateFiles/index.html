@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="UTF-8" />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename= 'css/style.css') }}"
-    />
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename= 'css/style.css') }}" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
     <title>FlaskBlog</title>
   </head>
 
   <body>
-    <div class="caixa">aaaaaaaaaaaaaaaaa</div>
-    <script src="" async defer></script>
+    <div class="caixa">aaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaa</div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
   </body>
+
 </html>
