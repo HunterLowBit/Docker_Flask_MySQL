@@ -1,1 +1,0 @@
-from flask_sql.app import *
