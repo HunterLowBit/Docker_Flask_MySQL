@@ -26,6 +26,7 @@ Objetivo: Criar uma aplicação flask(Python) para gerenciar banco de dados MySQ
 |  |- deploy.bat
 |  |- deploy.sh
 |  |- deployCD.bat
+|  |- deployCD.sh
 |
 |- flask_mysql
 |  |- staticFiles
@@ -43,7 +44,7 @@ Objetivo: Criar uma aplicação flask(Python) para gerenciar banco de dados MySQ
 |- requirements.txt
 ```
 
-### 1.2 O codigo está sendo adaptado para receber as rotas basicas, em breve deve receber as querrys 
+### 1.2 O codigo está sendo adaptado para receber as rotas basicas, em breve deve receber as querrys
 
 #### app.py
 
