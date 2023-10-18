@@ -38,10 +38,10 @@ Objetivo: Criar uma aplicação flask(Python) para gerenciar banco de dados MySQ
 |  |
 |  |- app.py
 |  |- dockerfile
+|  |- requirements.txt
 |
 |- docker-compose.yaml
 |- README.md
-|- requirements.txt
 ```
 
 ### 1.2 O codigo está sendo adaptado para receber as rotas basicas, em breve deve receber as querrys
