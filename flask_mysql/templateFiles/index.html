@@ -15,7 +15,113 @@
   <body>
     <div class="caixa">aaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaa</div>
 
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <h1>Formulário de Inserção</h1>
+    <form method="POST"
+          action="/inserir">
+      <label for="nome">Nome:</label>
+      <input type="text"
+             id="nome"
+             name="nome"><br>
+
+      <label for="sobrenome">Sobrenome:</label>
+      <input type="text"
+             id="sobrenome"
+             name="sobrenome"><br>
+
+      <label for="data_admissao">Data de Admissão:</label>
+      <input type="text"
+             id="data_admissao"
+             name="data_admissao"><br>
+
+      <label for="status">Status:</label>
+      <input type="text"
+             id="status"
+             name="status"><br>
+
+      <input type="submit"
+             value="Inserir">
+    </form>
+
+    <h1>Funcionários</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Sobrenome</th>
+          <th>Data de Admissão</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows %}
+        <tr>
+          <td>{{ row.nome }}</td>
+          <td>{{ row.sobrenome }}</td>
+          <td>{{ row.data_admissao }}</td>
+          <td>{{ row.status }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <h1>Funcionários</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Sobrenome</th>
+          <th>Data de Admissão</th>
+          <th>Status</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows %}
+        <tr>
+          <td>{{ row.nome }}</td>
+          <td>{{ row.sobrenome }}</td>
+          <td>{{ row.data_admissao }}</td>
+          <td>{{ row.status }}</td>
+          <td>
+            <form method="POST"
+                  action="/atualizar">
+              <input type="hidden"
+                     name="id"
+                     value="{{ row.id }}">
+              <label for="nome">Nome:</label>
+              <input type="text"
+                     id="nome"
+                     name="nome"
+                     value="{{ row.nome }}"><br>
+
+              <label for="sobrenome">Sobrenome:</label>
+              <input type="text"
+                     id="sobrenome"
+                     name="sobrenome"
+                     value="{{ row.sobrenome }}"><br>
+
+              <label for="data_admissao">Data de Admissão:</label>
+              <input type="text"
+                     id="data_admissao"
+                     name="data_admissao"
+                     value="{{ row.data_admissao }}"><br>
+
+              <label for="status">Status:</label>
+              <input type="text"
+                     id="status"
+                     name="status"
+                     value="{{ row.status }}"><br>
+
+              <input type="submit"
+                     value="Atualizar">
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <script src="{{ url_for('static', filename='js/scipt.js') }}"></script>
 
   </body>
 
