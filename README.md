@@ -9,7 +9,7 @@ Objetivo: Criar uma aplicação flask(Python) para gerenciar banco de dados MySQ
 3. [ ] Criar a querry do banco de dados com MySQL-Workbench e testar modelagem
 4. [X] Instalar o Flask e congelar versão (PIP FREEZE)
 5. [X] Criar rotas basicas de teste
-6. [ ] Utilizar gerenciador de MySQL ao Python (IMPORT MODULE)
+6. [X] Utilizar gerenciador de MySQL ao Python (IMPORT MODULE)
 7. [ ] Desenvolver paginas estaticas para testar formularios ao banco
 8. [ ] Retocar a aparência das paginas [OPICIONAL]
 9. [ ] Subir em DOCKER [OPICIONAL]
