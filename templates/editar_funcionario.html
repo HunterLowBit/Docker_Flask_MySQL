@@ -1,0 +1,42 @@
+<!-- templates/editar_funcionario.html -->
+{% include 'navbar.html' %}
+   <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+<div class="card-container">
+   
+<h1>Editar Funcionário</h1>
+<form method="POST" action="{{ url_for('editar_funcionario', funcionario_id=funcionario.id) }}">
+    <label for="primeiro_nome">Primeiro Nome:</label>
+    <input type="text" name="primeiro_nome" value="{{ funcionario.primeiro_nome }}" required>
+
+    <label for="sobrenome">Sobrenome:</label>
+    <input type="text" name="sobrenome" value="{{ funcionario.sobrenome }}" required>
+
+    <label for="data_admissao">Data de Admissão:</label>
+    <input type="date" name="data_admissao" value="{{ funcionario.data_admissao }}" required>
+
+    <label for="status_funcionario">Status do Funcionário:</label>
+    <input type="checkbox" name="status_funcionario" {% if funcionario.status_funcionario %}checked{% endif %}>
+
+    <label for="id_setor">Setor:</label>
+    <select name="id_setor" required>
+        {% for setor in setores %}
+            <option value="{{ setor.id }}" {% if funcionario.id_setor == setor.id %}selected{% endif %}>{{ setor.nome }}</option>
+        {% endfor %}
+    </select>
+
+    <label for="id_cargos">Cargo:</label>
+    <select name="id_cargos">
+        <option value="" {% if not funcionario.id_cargos %}selected{% endif %}>Nenhum</option>
+        {% for cargo in cargos %}
+            <option value="{{ cargo.id }}" {% if funcionario.id_cargos == cargo.id %}selected{% endif %}>{{ cargo.nome }}</option>
+        {% endfor %}
+    </select>
+
+    <input type="submit" value="Salvar Alterações">
+</form>
+<a href="{{ url_for('admin') }}">Voltar para o Painel de Administração</a>
+</div>
+

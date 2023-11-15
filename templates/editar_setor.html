@@ -1,0 +1,12 @@
+<!-- templates/editar_setor.html -->
+{% include 'navbar.html' %} {% include 'static/style.css'%}
+<div class="card-container">
+  <h1>Editar Setor</h1>
+  <form method="POST" action="{{ url_for('editar_setor', setor_id=setor.id) }}">
+    <label for="nome">Nome do Setor:</label>
+    <input type="text" name="nome" value="{{ setor.nome }}" required />
+
+    <input type="submit" value="Salvar Alterações" />
+  </form>
+  <a href="{{ url_for('admin') }}">Voltar para o Painel de Administração</a>
+</div>

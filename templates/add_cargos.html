@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>Adicionar Cargos</title>
+  </head>
+  <body>
+    {% include 'navbar.html' %}
+    <div class="card-container"><br><br>
+      <h1>Adicionar Cargos</h1>
+      <form method="POST" action="{{ url_for('add_cargos') }}">
+        <label for="nome">Nome do Cargo:</label>
+        <input type="text" name="nome" required />
+
+        <label for="id_setor">Setor:</label>
+        <select name="id_setor" required>
+          {% for setor in setores %}
+          <option value="{{ setor.id }}">{{ setor.nome }}</option>
+          {% endfor %}
+        </select>
+
+        <input type="submit" value="Adicionar Cargos" />
+      </form>
+      <a href="{{ url_for('index') }}" class="voltar-link"
+        >Voltar para a lista de funcionários</a
+      >
+    </div>
+  </body>
+</html>

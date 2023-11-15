@@ -1,0 +1,25 @@
+<!-- templates/editar_cargos.html -->
+{% include 'navbar.html' %}
+   <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+<div class="card-container">
+    
+<h1>Editar Cargo</h1>
+<form method="POST" action="{{ url_for('editar_cargos', cargo_id=cargo.id) }}">
+    <label for="nome">Nome do Cargo:</label>
+    <input type="text" name="nome" value="{{ cargo.nome }}" required>
+
+    <label for="id_setor">Setor:</label>
+    <select name="id_setor" required>
+        {% for setor in setores %}
+            <option value="{{ setor.id }}" {% if cargo.id_setor == setor.id %}selected{% endif %}>{{ setor.nome }}</option>
+        {% endfor %}
+    </select>
+
+    <input type="submit" value="Salvar Alterações">
+</form>
+<a href="{{ url_for('admin') }}">Voltar para o Painel de Administração</a>
+</div>
+

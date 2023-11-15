@@ -1,0 +1,192 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #282c35;
+    color: #fff;
+}
+
+.container-table {
+    
+    display: table;
+    width: 100%;
+    height: 100vh;
+}
+
+.card-container {
+    
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.card-table {
+    width: 100%;
+    /* Alterado para ocupar 90% da largura da tela */
+    max-width: 1000px;
+    padding: 5px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.631);
+    background-color: #fff;
+    margin: 5px auto;
+    /* Centralizado e ajustado a margem */
+    border-radius: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+input {
+    margin-bottom: 16px;
+    padding: 8px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #007BFF;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #0056b3;
+}
+
+.ativo a {
+    color: green;
+}
+
+.inativo a {
+    color: red;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-container h1,
+.card-container h2 {
+    margin-bottom: 5px;
+}
+
+.card-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.card-container li {
+    display: flex;
+    flex-direction: column;
+    /* Alterado para coluna em telas menores */
+    align-items: center;
+    /* Centralizado em telas menores */
+    max-width: 90%;
+    /* Ocupa 90% da largura da tela em telas menores */
+    color: #000;
+    padding: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.631);
+    background-color: #fff;
+    margin: 5px auto;
+    /* Centralizado e ajustado a margem */
+    border-radius: 10px;
+}
+
+.card-container li span {
+    flex-grow: 1;
+}
+
+.card-container .opcoes a {
+    margin-left: 0;
+    /* Removido o margin-left fixo */
+    margin-top: 5px;
+    /* Adicionado espaço superior */
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.card-container .opcoes a:hover {
+    text-decoration: underline;
+}
+
+.card-container .opcoes a.excluir {
+    color: #dc3545;
+}
+
+.card-container .opcoes a.excluir:hover {
+    text-decoration: underline;
+    color: #8b0000;
+}
+
+.card-container a {
+    text-decoration: none;
+    color: #007BFF;
+    margin-top: 5px;
+    /* Adicionado espaço superior */
+}
+
+.card-container a:hover {
+    text-decoration: underline;
+}
+
+/* Adicionadas regras de mídia para estilos responsivos */
+@media screen and (max-width: 1024px) {
+    .card-table {
+        width: 90%;
+    }
+
+    .card-container li {
+        max-width: 100%;
+    }
+}

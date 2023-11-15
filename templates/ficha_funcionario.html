@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>Ficha do Funcionário</title>
+  </head>
+  <body>
+    {% include 'navbar.html' %}
+
+    <div class="card-container"><br><br>
+      <h1>Ficha do Funcionário</h1>
+      <p>
+        <strong>Nome:</strong> {{ funcionario.primeiro_nome }} {{
+        funcionario.sobrenome }}
+      </p>
+      <p>
+        <strong>Data de Admissão:</strong> {{
+        funcionario.data_admissao.strftime('%Y-%m-%d') }}
+      </p>
+      <p>
+        <strong>Status:</strong> {{ "Ativo" if funcionario.status_funcionario
+        else "Inativo" }}
+      </p>
+      <p><strong>Setor:</strong> {{ funcionario.setor.nome }}</p>
+      {% if funcionario.cargo %}
+      <p><strong>Cargo:</strong> {{ funcionario.cargo.nome }}</p>
+      {% endif %}
+      <a href="{{ url_for('index') }}" class="voltar-link"
+        >Voltar para a lista de funcionários</a
+      >
+    </div>
+  </body>
+</html>

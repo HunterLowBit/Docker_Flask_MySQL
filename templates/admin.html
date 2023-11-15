@@ -1,0 +1,67 @@
+<!-- templates/admin.html -->
+{% include 'navbar.html' %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styleadm.css') }}" />
+
+<div class="card-container">
+  <h1>Painel de Administração</h1>
+
+  <h2>Editar ou Excluir Funcionários</h2>
+  <ul>
+    {% for funcionario in funcionarios %}
+    <li>
+      <span
+        >Nome: {{ funcionario.primeiro_nome }} <br>{{ funcionario.sobrenome }} <br> Setor: {{
+        funcionario.setor.nome }} <br> Cargo: {{ funcionario.cargo.nome }}</span
+      >
+      <span class="opcoes">
+        <a
+          href="{{ url_for('editar_funcionario', funcionario_id=funcionario.id) }}"
+          >Editar</a
+        >
+        
+        <a
+          href="{{ url_for('excluir_funcionario', funcionario_id=funcionario.id) }}"
+          onclick="return confirm('Tem certeza que deseja excluir este funcionário?')"
+          >Excluir</a
+        >
+      </span>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <h2>Editar ou Excluir Setores</h2>
+  <ul>
+    {% for setor in setores %}
+    <li>
+      <span>{{ setor.nome }}</span>
+      <span class="opcoes">
+        <a href="{{ url_for('editar_setor', setor_id=setor.id) }}">Editar</a> 
+        <a
+          href="{{ url_for('excluir_setor', setor_id=setor.id) }}"
+          onclick="return confirm('Tem certeza que deseja excluir este setor?')"
+          >Excluir</a
+        >
+      </span>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <h2>Editar ou Excluir Cargos</h2>
+  <ul>
+    {% for cargo in cargos %}
+    <li>
+      <span>{{ cargo.nome }}</span>
+      <span class="opcoes">
+        <a href="{{ url_for('editar_cargos', cargo_id=cargo.id) }}">Editar</a>
+        <a
+          href="{{ url_for('excluir_cargos', cargo_id=cargo.id) }}"
+          onclick="return confirm('Tem certeza que deseja excluir este cargo?')"
+          >Excluir</a
+        >
+      </span>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <a href="{{ url_for('index') }}">Voltar para a lista de funcionários</a>
+</div>

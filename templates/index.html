@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>Funcionários</title>
+  </head>
+  <body class="container-table">
+    {% include 'navbar.html' %}
+    
+    <div class="card-container">
+      <h1>Lista de Funcionários</h1>
+      <ul>
+        {% for funcionario in funcionarios %}
+        <li
+          class="card-table {% if funcionario.status_funcionario %}ativo{% else %}inativo{% endif %}"
+        >
+          <a
+            href="{{ url_for('ficha_funcionario', funcionario_id=funcionario.id) }}"
+          >
+            {{ funcionario.primeiro_nome }} {{ funcionario.sobrenome }} - Setor:
+            {{ funcionario.setor.nome }} - Cargo {{ funcionario.cargo.nome }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </body>
+</html>

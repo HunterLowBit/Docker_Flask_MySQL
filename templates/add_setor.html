@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>Adicionar Setor</title>
+  </head>
+  <body>
+    {% include 'navbar.html' %}
+    <div class="card-container"><br><br>
+      <h1>Adicionar Setor</h1>
+      <form method="POST" action="{{ url_for('add_setor') }}">
+        <label for="nome">Nome do Setor:</label>
+        <input type="text" name="nome" required />
+        <input type="submit" value="Adicionar Setor" />
+      </form>
+      <a href="{{ url_for('index') }}" class="voltar-link"
+        >Voltar para a lista de funcionários</a
+      >
+    </div>
+  </body>
+</html>

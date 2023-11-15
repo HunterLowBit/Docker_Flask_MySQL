@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>Adicionar Funcionário</title>
+  </head>
+  <body>
+    {% include 'navbar.html' %}
+    <div class="card-container"><br><br>
+      <h1>Adicionar Funcionário</h1>
+      <form method="POST" action="{{ url_for('add_funcionario') }}">
+        <label for="primeiro_nome">Primeiro Nome:</label>
+        <input type="text" name="primeiro_nome" required />
+
+        <label for="sobrenome">Sobrenome:</label>
+        <input type="text" name="sobrenome" required />
+
+        <label for="data_admissao">Data de Admissão:</label>
+        <input type="date" name="data_admissao" required />
+
+        <label for="status_funcionario">Status Funcionário:</label>
+        <input type="checkbox" name="status_funcionario" /> 
+
+        <label for="id_setor">Setor:</label>
+        <select name="id_setor" required>
+          {% for setor in setores %}
+          <option value="{{ setor.id }}">{{ setor.nome }}</option>
+          {% endfor %}
+        </select>
+
+        <label for="id_cargos">Cargos:</label>
+        <select name="id_cargos">
+          {% for cargo in cargos %}
+          <option value="{{ cargo.id }}">{{ cargo.nome }}</option>
+          {% endfor %}
+        </select>
+
+        <input type="submit" value="Adicionar Funcionário" />
+      </form>
+      <a href="{{ url_for('index') }}" class="voltar-link"
+        >Voltar para a lista de funcionários</a
+      >
+    </div>
+  </body>
+</html>

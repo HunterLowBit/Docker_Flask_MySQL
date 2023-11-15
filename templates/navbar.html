@@ -1,0 +1,13 @@
+<!-- templates/navbar.html -->
+<nav class="navbar">
+  <ul>
+    <li><a href="{{ url_for('index') }}">Pagina Inicial</a></li>
+    <li><a href="{{ url_for('add_setor') }}">Adicionar Setor</a></li>
+    <li><a href="{{ url_for('add_cargos') }}">Adicionar Cargo</a></li>
+    <li>
+      <a href="{{ url_for('add_funcionario') }}">Adicionar Funcionário</a>
+    </li>
+    <li><a href="{{ url_for('admin') }}">Painel de Administração</a></li>
+    <!-- Adicione este link -->
+  </ul>
+</nav>
